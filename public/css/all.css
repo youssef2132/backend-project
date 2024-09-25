@@ -1,0 +1,116 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+  animation: gradientAnimation 10s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+  }
+  50% {
+    background: linear-gradient(5deg, #ff9a9e, #fad0c4);
+  }
+  100% {
+    background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+  }
+}
+
+form {
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 384px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+form:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+.input-icon {
+  display: flex;
+  transform: translateY(-50%);
+  color: #ccc;
+  pointer-events: none;
+  transition: color 0.3s;
+  right: 92%;
+  top: 67%;
+  position: absolute;
+}
+
+input {
+  width: 86%;
+  padding: 12px 12px 12px 40px; /* Adjust padding to make space for the icon */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #74ebd5;
+  outline: none;
+  box-shadow: 0 0 10px rgba(116, 235, 213, 0.5);
+}
+
+input:focus + .input-icon {
+  color: #74ebd5;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  padding: 14px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+  transform: translateY(-4px);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+}
+
+.error {
+  color: red;
+  font-size: 0.875em;
+  position: absolute;
+  left: 50%; /* Center the error message horizontally */
+  transform: translateX(-50%); /* Adjust to center the message */
+  top: calc(100% + 0px); /* Position it right below the input field */
+  margin: 0;
+  white-space: nowrap; /* Prevent the text from breaking into multiple lines */
+}
